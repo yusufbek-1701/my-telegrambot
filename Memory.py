@@ -2,6 +2,7 @@ import os
 import json
 import random
 import re
+from dotenv import load_dotenv
 from flask import Flask
 from keep_alive import keep_alive
 from threading import Thread
@@ -18,7 +19,8 @@ from telebot.types import (
     InlineQueryResultPhoto
 )
 
-TOKEN = "7700337651:AAEYR-Uru8MtN3BfofwIduT5go4ZZLh-5Qw"
+load_dotenv()
+TOKEN = os.getenv("TOKEN")
 bot = telebot.TeleBot(TOKEN)
 
 CHANNELS = {
